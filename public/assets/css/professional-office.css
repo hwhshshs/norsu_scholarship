@@ -1,0 +1,71 @@
+
+/* Professional Scholarship Office Theme */
+
+:root {
+    --bs-primary: #003366 !important;
+    --bs-primary-rgb: 0, 51, 102 !important;
+    --bs-info: #0066cc !important;
+    --bs-success: #28a745 !important;
+    --bs-dark: #1a202c !important;
+}
+
+/* Override Gradients to Navy */
+.bg-gradient-primary {
+    background-image: linear-gradient(310deg, #002244 0%, #004488 100%) !important;
+}
+
+.btn-primary, .btn.bg-gradient-primary {
+    background-image: linear-gradient(310deg, #003366 0%, #0055aa 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 6px rgba(0, 51, 102, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.btn-primary:hover, .btn.bg-gradient-primary:hover {
+    background-image: linear-gradient(310deg, #002244 0%, #003366 100%) !important;
+    transform: translateY(-1px);
+}
+
+/* Sidebar Professionalism */
+.navbar-vertical .navbar-nav .nav-link.active {
+    background-color: #f8f9fa !important;
+    border-radius: 0.75rem;
+    box-shadow: none !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link.active .icon {
+    background-image: linear-gradient(310deg, #003366 0%, #0055aa 100%) !important;
+}
+
+/* Text Sharpness */
+body {
+    color: #2d3748 !important;
+    background-color: #f4f7fe !important;
+}
+
+.text-primary {
+    color: #003366 !important;
+}
+
+/* Card Styling */
+.card {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-header {
+    border-bottom: 1px solid #f1f1f1 !important;
+}
+
+/* Tables */
+.table thead th {
+    background-color: #f8f9fa !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.025em !important;
+    color: #4a5568 !important;
+}
+
+/* Navbars */
+.navbar-main {
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}

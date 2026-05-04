@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="smsIconTitle smsIconDesc">
+  <title id="smsIconTitle">Scholarship Management System Icon</title>
+  <desc id="smsIconDesc">Rounded blue badge with a graduation cap and tassel.</desc>
+  <defs>
+    <linearGradient id="smsBg" x1="12" y1="10" x2="116" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f3d68" />
+      <stop offset="1" stop-color="#2f5f9b" />
+    </linearGradient>
+    <linearGradient id="smsCap" x1="24" y1="34" x2="104" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd26f" />
+      <stop offset="1" stop-color="#f0a118" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#smsBg)" />
+
+  <path d="M22 46L64 30L106 46L64 62L22 46Z" fill="url(#smsCap)" />
+  <path d="M37 58V74C37 87 49 98 64 98C79 98 91 87 91 74V58L64 68L37 58Z" fill="#ffffff" />
+
+  <circle cx="102" cy="64" r="4" fill="#ffd26f" />
+  <path d="M102 64V84" stroke="#ffd26f" stroke-width="4" stroke-linecap="round" />
+  <circle cx="102" cy="89" r="5" fill="#f0a118" />
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 128" role="img" aria-labelledby="smsLogoTitle smsLogoDesc">
+  <title id="smsLogoTitle">Scholarship Management System Logo</title>
+  <desc id="smsLogoDesc">Scholarship icon with scholarship management system wordmark.</desc>
+  <defs>
+    <linearGradient id="logoBg" x1="10" y1="10" x2="118" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f3d68" />
+      <stop offset="1" stop-color="#2f5f9b" />
+    </linearGradient>
+    <linearGradient id="logoCap" x1="24" y1="34" x2="104" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd26f" />
+      <stop offset="1" stop-color="#f0a118" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#logoBg)" />
+  <path d="M22 46L64 30L106 46L64 62L22 46Z" fill="url(#logoCap)" />
+  <path d="M37 58V74C37 87 49 98 64 98C79 98 91 87 91 74V58L64 68L37 58Z" fill="#ffffff" />
+  <circle cx="102" cy="64" r="4" fill="#ffd26f" />
+  <path d="M102 64V84" stroke="#ffd26f" stroke-width="4" stroke-linecap="round" />
+  <circle cx="102" cy="89" r="5" fill="#f0a118" />
+
+  <text x="146" y="56" fill="#1f3d68" font-size="28" font-weight="700" font-family="Open Sans, Arial, sans-serif" letter-spacing="1.2">SCHOLARSHIP</text>
+  <text x="146" y="88" fill="#2f5f9b" font-size="26" font-weight="700" font-family="Open Sans, Arial, sans-serif" letter-spacing="0.8">MANAGEMENT SYSTEM</text>
+</svg>
