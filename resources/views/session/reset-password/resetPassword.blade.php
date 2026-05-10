@@ -92,7 +92,7 @@
   <div class="reset-container">
     <div class="reset-glass-card">
       <div class="text-center mb-4">
-        <img src="https://norsu.edu.ph/wp-content/uploads/2021/05/NORSU-Logo.png" alt="NORSU Logo" class="brand-logo">
+        <img src="{{ asset('assets/img/norsu_logo.png') }}" alt="NORSU Logo" class="brand-logo">
         <h1 class="portal-title">New Credentials</h1>
         <p class="text-muted text-sm">Secure your account with a new password.</p>
       </div>

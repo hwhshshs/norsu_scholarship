@@ -1,0 +1,133 @@
+:root {
+    --tdp-color: #2152ff;
+    --ched-color: #2dce89;
+    --acef-color: #825ee4;
+    --cmsp-color: #fbcf33;
+    --tdp-gradient: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+    --ched-gradient: linear-gradient(310deg, #2dce89 0%, #2dcecc 100%);
+    --acef-gradient: linear-gradient(310deg, #825ee4 0%, #a489ee 100%);
+    --cmsp-gradient: linear-gradient(310deg, #fbcf33 0%, #fbe089 100%);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 1rem !important;
+}
+
+.ay-header {
+    background: rgba(248, 249, 250, 0.9);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem 0;
+    margin: 1.5rem 0 1rem 0;
+    border-bottom: 2px solid #e9ecef;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ay-header[aria-expanded="true"] .ay-chevron {
+    transform: rotate(180deg);
+}
+
+.ay-chevron {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: #67748e;
+}
+
+.batch-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e9ecef !important;
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+    background: #fff;
+}
+
+.batch-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    border-color: #2152ff33 !important;
+}
+
+.batch-card.tdp-tes {
+    border-left: 5px solid var(--tdp-color) !important;
+}
+
+.batch-card.ched {
+    border-left: 5px solid var(--ched-color) !important;
+}
+
+.batch-card.acef-giahep {
+    border-left: 5px solid var(--acef-color) !important;
+}
+
+.batch-card.cmsp {
+    border-left: 5px solid var(--cmsp-color) !important;
+}
+
+.status-badge {
+    padding: 0.35em 0.8em;
+    font-size: 0.75em;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.progress-mini {
+    height: 6px;
+    border-radius: 3px;
+    background-color: #e9ecef;
+}
+
+.progress-mini .progress-bar {
+    border-radius: 3px;
+}
+
+/* Clustered layout helpers */
+.data-cluster-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.data-cluster-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.batch-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #344767;
+    margin-bottom: 0;
+}
+
+.batch-subtitle {
+    font-size: 0.8rem;
+    color: #67748e;
+    margin-bottom: 0;
+}
+
+.amount-display {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #2dce89;
+}
+
+.scholar-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #67748e;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}

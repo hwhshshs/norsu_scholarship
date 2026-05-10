@@ -41,12 +41,12 @@
   <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <!-- CSS Files -->
   <!-- CSS Files -->
   <link id="pagestyle" href="{{ asset('assets/css/soft-ui-dashboard.css') }}?v=1.0.3" rel="stylesheet" />
   <link href="{{ asset('assets/css/professional-office.css') }}" rel="stylesheet" />
+  @stack('css')
   <style>
     body {
       font-family: 'Inter', 'Open Sans', sans-serif;
@@ -238,6 +238,53 @@
         opacity: 0;
       }
     }
+    .btn-primary-simple {
+      background-color: #002d54 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+    .btn-outline-simple {
+      border: 1px solid #002d54 !important;
+      color: #002d54 !important;
+      background: transparent !important;
+    }
+    .btn-icon-only {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px !important;
+      transition: all 0.3s ease !important;
+    }
+    .btn-icon-only.btn-sm {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px !important;
+    }
+    .btn-icon-only.btn-xs {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px !important;
+      font-size: 0.7rem;
+    }
+    .btn-group-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .bg-primary-simple {
+      background-color: #002d54 !important;
+      color: #fff !important;
+    }
+    .text-primary-simple {
+      color: #002d54 !important;
+    }
+    .bg-outline-simple {
+      background-color: transparent !important;
+      border: 1px solid #002d54 !important;
+    }
   </style>
 </head>
 
@@ -251,32 +298,38 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
+    /* Premium Glass Toast Styling */
+    .swal2-toast {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(10px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(10px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+      border-radius: 1rem !important;
+    }
+    .swal2-toast .swal2-title {
+      color: #002d54 !important;
+      font-weight: 700 !important;
+      font-size: 0.9rem !important;
+    }
+    .swal2-toast .swal2-html-container {
+      color: #344767 !important;
+      font-size: 0.8rem !important;
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+    /* Scrollbar for long conflict lists */
+    .swal2-html-container::-webkit-scrollbar { width: 3px; }
+    .swal2-html-container::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+    
     .swal2-popup {
       font-family: 'Inter', sans-serif !important;
       border-radius: 1.25rem !important;
-      padding: 1.25rem !important;
-      width: 400px !important;
       box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.1) !important;
-    }
-    .swal2-title {
-      font-size: 1.25rem !important;
-      color: #003366 !important;
-    }
-    .swal2-html-container {
-      font-size: 0.875rem !important;
-      margin: 1rem 0 !important;
-    }
-    .swal2-icon {
-      transform: scale(0.7) !important;
-      margin-top: 0.5rem !important;
     }
     .swal2-styled.swal2-confirm {
       background-image: var(--primary-gradient) !important;
-      box-shadow: 0 4px 6px -1px rgba(33, 82, 255, 0.3), 0 2px 4px -1px rgba(33, 82, 255, 0.1) !important;
-      border-radius: 0.5rem !important;
-      font-weight: 600 !important;
-    }
-    .swal2-styled.swal2-cancel {
       border-radius: 0.5rem !important;
       font-weight: 600 !important;
     }
@@ -480,19 +533,19 @@
       });
 
       @if (session('success'))
-        Toast.fire({ icon: 'success', title: "{{ session('success') }}" });
+        Toast.fire({ icon: 'success', html: "{!! session('success') !!}" });
       @endif
 
       @if (session('error'))
-        Toast.fire({ icon: 'error', title: "{{ session('error') }}" });
+        Toast.fire({ icon: 'error', html: "{!! session('error') !!}" });
       @endif
 
       @if (session('warning'))
-        Toast.fire({ icon: 'warning', title: "{{ session('warning') }}" });
+        Toast.fire({ icon: 'warning', html: "{!! session('warning') !!}" });
       @endif
 
       @if (session('status'))
-        Toast.fire({ icon: 'info', title: "{{ session('status') }}" });
+        Toast.fire({ icon: 'info', html: "{!! session('status') !!}" });
       @endif
 
       @if ($errors->any())

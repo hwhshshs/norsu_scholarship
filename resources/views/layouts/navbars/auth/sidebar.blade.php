@@ -1,4 +1,4 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3" id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3" id="sidenav-main" style="overflow-y: auto !important; max-height: none !important;">
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('dashboard') }}">
@@ -7,15 +7,10 @@
     </a>
   </div>
   <hr class="horizontal dark mt-0">
-  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
-    @php
-      $isScholarshipHubActive = Request::is('scholarship-system')
-        || Request::is('scholarship-system/module/*')
-        || Request::is('scholarship-system/launch/*');
-    @endphp
+  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main" style="height: auto !important; overflow: hidden !important;">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('dashboard') ? 'active' : '') }}" href="{{ url('dashboard') }}">
+        <a class="nav-link {{ (Request::is('dashboard') ? 'active' : '') }}" href="{{ route('dashboard') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i style="font-size: 0.9rem;" class="fas fa-home text-center {{ (Request::is('dashboard') ? 'text-white' : 'text-dark') }}"></i>
           </div>
@@ -23,69 +18,59 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ $isScholarshipHubActive ? 'active' : '' }}" href="{{ route('scholarship-system') }}">
+        <a class="nav-link {{ (Request::is('student-info*') ? 'active' : '') }}" href="{{ route('student-info.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.95rem;" class="fas fa-graduation-cap text-center {{ $isScholarshipHubActive ? 'text-white' : 'text-dark' }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-users text-center {{ (Request::is('student-info*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
-          <span class="nav-link-text ms-1">Scholarship Hub</span>
+          <span class="nav-link-text ms-1">Student Info</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ ((Request::is('scholarship-system/students') || Request::is('scholarship-system/students/create') || Request::is('scholarship-system/students/import*') || Request::is('scholarship-system/students/*/edit')) ? 'active' : '') }}" href="{{ route('scholarship-students.index') }}">
+        <a class="nav-link {{ (Request::is('billing*') ? 'active' : '') }}" href="{{ route('billing.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-users text-center {{ ((Request::is('scholarship-system/students') || Request::is('scholarship-system/students/create') || Request::is('scholarship-system/students/import*') || Request::is('scholarship-system/students/*/edit')) ? 'text-white' : 'text-dark') }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-file-invoice-dollar text-center {{ (Request::is('billing*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
-          <span class="nav-link-text ms-1">Students</span>
+          <span class="nav-link-text ms-1">Billing</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('scholarship-system/students/report*') ? 'active' : '') }}" href="{{ route('scholarship-students.report') }}">
+        <a class="nav-link {{ (Request::is('disbursement*') ? 'active' : '') }}" href="{{ route('disbursement.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-file-alt text-center {{ (Request::is('scholarship-system/students/report*') ? 'text-white' : 'text-dark') }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-money-check-alt text-center {{ (Request::is('disbursement*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
-          <span class="nav-link-text ms-1">Student Report</span>
+          <span class="nav-link-text ms-1">Disbursement</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('scholarship-system/academic*') ? 'active' : '') }}" href="{{ route('scholarship-academic.index') }}">
+        <a class="nav-link {{ (Request::is('fund-report*') ? 'active' : '') }}" href="{{ route('fund-report.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-book text-center {{ (Request::is('scholarship-system/academic*') ? 'text-white' : 'text-dark') }}"></i>
-          </div>
-          <span class="nav-link-text ms-1">Academic</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {{ ((Request::is('scholarship-system/fund-report*') || Request::is('scholarship-system/billing*') || Request::is('scholarship-system/disbursed*')) ? 'active' : '') }}" href="{{ route('scholarship-fund-report.index') }}">
-          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-wallet text-center {{ ((Request::is('scholarship-system/fund-report*') || Request::is('scholarship-system/billing*') || Request::is('scholarship-system/disbursed*')) ? 'text-white' : 'text-dark') }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-chart-bar text-center {{ (Request::is('fund-report*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
           <span class="nav-link-text ms-1">Fund Report</span>
         </a>
       </li>
+
+      @if(auth()->check() && auth()->user()->role === 'admin')
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Administration</h6>
+      </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('scholarship-system/reconciliation*') ? 'active' : '') }}" href="{{ route('scholarship-reconciliation.index') }}">
+        <a class="nav-link {{ (Request::is('admin/activity-logs*') ? 'active' : '') }}" href="{{ route('admin.activity-logs') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-exchange-alt text-center {{ (Request::is('scholarship-system/reconciliation*') ? 'text-white' : 'text-dark') }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-list-ul text-center {{ (Request::is('admin/activity-logs*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
-          <span class="nav-link-text ms-1">Reconciliation</span>
+          <span class="nav-link-text ms-1">Activity Logs</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('scholarship-system/account-setting*') ? 'active' : '') }}" href="{{ route('scholarship-account-setting.index') }}">
+        <a class="nav-link {{ (Request::is('admin/staff*') ? 'active' : '') }}" href="{{ route('admin.staff.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-cogs text-center {{ (Request::is('scholarship-system/account-setting*') ? 'text-white' : 'text-dark') }}"></i>
+            <i style="font-size: 0.9rem;" class="fas fa-user-shield text-center {{ (Request::is('admin/staff*') ? 'text-white' : 'text-dark') }}"></i>
           </div>
-          <span class="nav-link-text ms-1">Account Setting</span>
+          <span class="nav-link-text ms-1">Staff Management</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link {{ (Request::is('scholarship-system/checklist') ? 'active' : '') }}" href="{{ route('scholarship-system.checklist') }}">
-          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: 0.9rem;" class="fas fa-clipboard-check text-center {{ (Request::is('scholarship-system/checklist') ? 'text-white' : 'text-dark') }}"></i>
-          </div>
-          <span class="nav-link-text ms-1">Integration Checklist</span>
-        </a>
-      </li>
+      @endif
     </ul>
   </div>
 </aside>

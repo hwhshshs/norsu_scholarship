@@ -158,7 +158,7 @@
     <div class="login-container">
       <div class="login-glass-card">
         <div class="brand-section">
-          <img src="https://norsu.edu.ph/wp-content/uploads/2021/05/NORSU-Logo.png" alt="NORSU Logo" class="brand-logo">
+          <img src="{{ asset('assets/img/norsu_logo.png') }}" alt="NORSU Logo" class="brand-logo">
           <h1 class="portal-title">NORSU</h1>
           <p class="portal-subtitle">Scholarship Management System</p>
         </div>

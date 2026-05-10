@@ -127,7 +127,7 @@
     <div class="register-container">
       <div class="register-glass-card">
         <div class="brand-section">
-          <img src="https://norsu.edu.ph/wp-content/uploads/2021/05/NORSU-Logo.png" alt="NORSU Logo" class="brand-logo">
+          <img src="{{ asset('assets/img/norsu_logo.png') }}" alt="NORSU Logo" class="brand-logo">
           <h1 class="portal-title">Create Administrator Account</h1>
           <p class="text-muted text-sm">Access the Scholarship Management System</p>
         </div>
