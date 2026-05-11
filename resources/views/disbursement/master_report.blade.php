@@ -13,6 +13,35 @@
             padding: 40px;
             background: #fff;
         }
+        .norsu-letterhead {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .norsu-logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .norsu-details {
+            text-align: center;
+        }
+        .norsu-details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #002d54;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .norsu-details p {
+            margin: 2px 0;
+            font-size: 12px;
+            color: #555;
+            font-weight: 600;
+        }
         .header {
             text-align: center;
             border-bottom: 2px solid #002d54;
@@ -126,6 +155,16 @@
 </head>
 <body>
     <button class="btn-print no-print" onclick="window.print()">Print Report</button>
+
+    <div class="norsu-letterhead">
+        <img src="{{ asset('assets/img/norsu_logo.png') }}" class="norsu-logo" alt="NORSU Logo">
+        <div class="norsu-details">
+            <p style="text-transform: uppercase; font-size: 10px; color: #777; margin-bottom: 0;">Republic of the Philippines</p>
+            <h2>NEGROS ORIENTAL STATE UNIVERSITY</h2>
+            <p>Main Campus, Dumaguete City, Negros Oriental</p>
+            <p>Scholarship and Financial Assistance Office</p>
+        </div>
+    </div>
 
     <div class="header">
         <h1>Master Scholarship Audit Summary</h1>
